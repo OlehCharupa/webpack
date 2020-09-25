@@ -29,7 +29,7 @@ module.exports = (env) => ({
       },
     }),
     new MiniCssExtractPlugin({
-      filename: "styles.css",
+      filename: "style.css",
     }),
     new OptimizeCssAssetsPlugin(),
   ],

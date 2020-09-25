@@ -1,14 +1,14 @@
 const path = require("path");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
-const merge = require("webpack-merge");
+const { merge } = require("webpack-merge");
 const FriendlyErrorsWebpackPlugin = require("friendly-errors-webpack-plugin");
 const WebpackBar = require("webpackbar");
 
-console.log("DIRNAME", __dirname); // глобальная переменная, содержащая абсолютный путь к файлу
+// console.log("DIRNAME", __dirname); // глобальная переменная, содержащая абсолютный путь к файлу
 const loadModeConfig = (env) =>
   require(`./build-utils/${env.mode}.config`)(env);
 // экспорт объекта настроек
-module.exports = (env) => {
+module.exports = (env) =>
   merge(
     {
       mode: env.mode,
@@ -59,4 +59,4 @@ module.exports = (env) => {
     },
     loadModeConfig(env),
   );
-};
+
